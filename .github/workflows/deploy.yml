@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: development
-    env:
-      ENV_NAME: ${{ job.environment.name }}
+    # env:
+    #   ENV_NAME: ${{ job.environment.name }}
     steps:
       - name: Test
         run: |
@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-    env:
-      ENV_NAME: ${{ job.environment.name }}
+    # env:
+    #   ENV_NAME: ${{ job.environment.name }}
     steps:
       - name: Test
         run: |
