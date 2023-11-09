@@ -9,6 +9,6 @@ on:
 
 jobs:
   call-deploy-workflow:
-    uses: ./.github/workflows/deploy.yml@main
+    uses: ./deploy.yml
     with:
       environment_name: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
