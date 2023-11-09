@@ -14,4 +14,6 @@ jobs:
     environment:
       name: ${{ github.event.inputs.environment }}
     steps:
-      # Steps remain the same as before
+      - name: Test
+        run: |
+          env
