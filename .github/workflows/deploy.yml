@@ -1,18 +1,18 @@
 name: Manual Build and Deploy
 
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "Deployment environment"
-        required: true
-        default: "development"
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       environment:
+#         description: "Deployment environment"
+#         required: true
+#         default: "development"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     environment:
-      name: ${{ github.event.inputs.environment }}
+      name: development
     steps:
       - name: Test
         run: |
