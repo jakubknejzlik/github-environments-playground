@@ -1,35 +1,18 @@
-name: Manual Build and Deploy
+# This is a reusable workflow defined in .github/workflows/deploy.yml
+name: Reusable Deployment Workflow
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
-      environment:
-        description: "Deployment environment"
+      environment_name:
         required: true
-        default: "development"
-  # Push event
-  push:
-    branches:
-      - "main"
+        type: string
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: development
-    env:
-      ENV_NAME: ${{ vars.ENVIRONMENT }}
     steps:
-      - name: Test
-        run: |
-          env
-  build-and-deploy-prod:
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-    env:
-      ENV_NAME: production
-    steps:
-      - name: Test
-        run: |
-          env
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Deploy
+        run: echo "Deploying to ${{ inputs.environment_name }}"

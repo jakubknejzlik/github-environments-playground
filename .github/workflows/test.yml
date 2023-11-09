@@ -1,0 +1,14 @@
+# This is a calling workflow defined in another .github/workflows file
+name: Call Reusable Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  call-deploy-workflow:
+    uses: ./.github/workflows/deploy.yml@main
+    with:
+      environment_name: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
