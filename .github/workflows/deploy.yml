@@ -21,3 +21,11 @@ jobs:
       - name: Test
         run: |
           env
+  build-and-deploy-prod:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    steps:
+      - name: Test
+        run: |
+          env
