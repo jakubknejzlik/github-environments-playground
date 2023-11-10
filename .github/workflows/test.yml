@@ -6,5 +6,6 @@ on: push
 jobs:
   call-deploy-workflow:
     uses: ./.github/workflows/deploy.yml
+    if: false
     with:
       environment_name: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
