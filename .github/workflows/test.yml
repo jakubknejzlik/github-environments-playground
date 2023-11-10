@@ -1,8 +1,7 @@
 # This is a calling workflow defined in another .github/workflows file
 name: Call Reusable Workflow
 
-on:
-  push: null
+on: push
 
 jobs:
   call-deploy-workflow:
