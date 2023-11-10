@@ -2,10 +2,7 @@
 name: Call Reusable Workflow
 
 on:
-  push:
-    branches:
-      - main
-      - develop
+  push: true
 
 jobs:
   call-deploy-workflow:
