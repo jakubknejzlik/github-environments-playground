@@ -2,7 +2,7 @@
 name: Call Reusable Workflow
 
 on:
-  push: true
+  push: {}
 
 jobs:
   call-deploy-workflow:
